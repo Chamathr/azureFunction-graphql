@@ -15,4 +15,13 @@ export class Database {
 
         return response
     }
+
+    async getUserById(userId: any) {
+        const response = await prisma.user.findUnique({
+            where: {
+                id: userId
+            }
+        })
+        return response
+    }
 }

@@ -15,11 +15,7 @@ export class Resolver {
                 },
 
                 getUserDataById: (_: any, { id, input }) => {
-                    const userData = data.getMockData().filter((value: any) => {
-                        return value.id === id
-                    })?.[0]
-
-                    return userData
+                    return userData.getUserById(id)
                 },
             },
 
