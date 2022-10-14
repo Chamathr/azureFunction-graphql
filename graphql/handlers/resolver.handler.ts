@@ -1,11 +1,9 @@
-import { MockData } from "./mockData";
 import { Database } from "./data.handler";
 
 export class Resolver {
 
     static getResolvers() {
 
-        const data = new MockData()
         const userData = new Database()
 
         const resolvers = {
