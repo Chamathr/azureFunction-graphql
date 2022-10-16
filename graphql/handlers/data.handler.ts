@@ -25,4 +25,27 @@ export class Database {
         })
         return response
     }
+
+    async deleteUser(userId: number) {
+        const response = await prisma.user.delete({
+            where: {
+                id: userId
+            }
+        })
+        return response
+    }
+
+    async updateUser(userId: number, userName: string, userEmail: string, userAge: number) {
+        const response = await prisma.user.update({
+            where: {
+                id: userId
+            },
+            data: {
+                name: userName,
+                email: userEmail,
+                age: userAge
+            }
+        })
+        return response
+    }
 }

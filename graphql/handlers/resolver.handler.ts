@@ -24,6 +24,14 @@ export class Resolver {
                         email: email,
                         age: age
                     })
+                },
+
+                deleteUserData: (_: any, { id }) => {
+                    return userData.deleteUser(id)
+                },
+
+                updateUserData: (_: any, { id, name, email, age }) => {
+                    return userData.updateUser(id, name, email, age)
                 }
             }
         };
