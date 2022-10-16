@@ -18,11 +18,11 @@ export class Resolver {
             },
 
             Mutation: {
-                createUserData: (_: any, { name, email, age }) => {
+                createUserData: (_: any, { userCreateInput }) => {
                     return userData.createUser({
-                        name: name,
-                        email: email,
-                        age: age
+                        name: userCreateInput.name,
+                        email: userCreateInput.email,
+                        age: userCreateInput.age
                     })
                 },
 
@@ -30,8 +30,8 @@ export class Resolver {
                     return userData.deleteUser(id)
                 },
 
-                updateUserData: (_: any, { id, name, email, age }) => {
-                    return userData.updateUser(id, name, email, age)
+                updateUserData: (_: any, { userUpdateInput }) => {
+                    return userData.updateUser(userUpdateInput.id, userUpdateInput.name, userUpdateInput.email, userUpdateInput.age)
                 }
             }
         };

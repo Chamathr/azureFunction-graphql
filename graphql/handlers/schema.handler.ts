@@ -10,9 +10,22 @@ export class Schema {
         }
 
         type Mutation {
-            createUserData(name: String!, email: String!, age: Int!): User,
+            createUserData(userCreateInput: UserCreateInput!): User,
             deleteUserData(id: Int!): User,
-            updateUserData(id: Int!, name: String, email: String, age: Int): User
+            updateUserData(userUpdateInput: UserUpdateInput!): User
+        }
+
+        input UserCreateInput {
+          name: String!, 
+          email: String!, 
+          age: Int!
+        }
+
+        input UserUpdateInput {
+          id: Int!,
+          name: String, 
+          email: String, 
+          age: Int
         }
 
         type User {
